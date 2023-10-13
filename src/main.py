@@ -334,7 +334,7 @@ def start():
 
                                     def homeWindow():
                                         st.insert(
-                                            END, "  
+                                            END,  
                                             "n hmm the bulding windoes are not damaged ")
                                         c7.destroy()
                                         c8.destroy()
