@@ -1,15 +1,19 @@
+import random
+import os
 from tkinter import *
 from tkinter.scrolledtext import ScrolledText
-import random
 from PIL import ImageTk, Image
-import os
+
 # MAIN WINDOW
 gg = Tk()
 gg.title("Text Based Adverture game")
 f = Canvas(gg, width=1270, height=800)
 f.pack(fill="both", expand=True)
+
+
 # Get the current directory of the script
 current_directory = os.path.dirname(os.path.abspath(__file__))
+
 
 # Define the path to the image within the 'assets' folder
 img = ImageTk.PhotoImage(Image.open(
@@ -28,6 +32,8 @@ img4 = ImageTk.PhotoImage(Image.open(
     current_directory+"/assets/images/house4.jpg"))
 img8 = ImageTk.PhotoImage(Image.open(
     current_directory+"/assets/images/app1.jpg"))
+
+#label widgets are created within a container gg to display images within the GUI
 I = Label(gg, image=img1)
 I3 = Label(gg, image=img3)
 I4 = Label(gg, image=img4)
@@ -35,58 +41,92 @@ I5 = Label(gg, image=img5)
 I7 = Label(gg, image=img7)
 I8 = Label(gg, image=img8)
 
-
+#start of the game
 def start():
     d.destroy()
     st = ScrolledText(gg, width=150, height=20)
-    c_window = f.create_window(20, 10, anchor=NW, window=st)
-    st.insert(END, "WELCOME TO TEXT BASED ADVENTURE GAME")
+    c_window = f.create_window(
+        20, 10, anchor=NW, window=st)
+    st.insert(END, 
+              "WELCOME TO TEXT BASED ADVENTURE GAME")
     st.insert(END,
-              "\nYou are lancelot and the town people call you engineering god because of your ingenious inventions.\nYou made your fortune by your inventions")
+              "\nYou are lancelot and the town people call you engineering god because of your ingenious inventions."
+              "\nYou made your fortune by your inventions")
     st.insert(END,
-              "\nOne day you wake up and see that all your fortune has been stolen from your safe , and there is no sign of your wife.\n you search the whole house for clues but wont find any")
-    c1_window = f.create_window(20, 350, anchor=NW, window=I)
-    st.insert(END, "\nWhat do you want to do?")
+              "\nOne day you wake up and see that all your fortune has been stolen from your safe , and there is no sign of your wife."
+              "\n you search the whole house for clues but wont find any")
+    c1_window = f.create_window(
+        20, 350, anchor=NW, window=I)
+    st.insert(END, 
+              "\nWhat do you want to do?")
 
     def lastpart():
         def check1():
-            st.insert(END, "there is a letter and a pouch of gold")
+            st.insert(END, 
+                      "there is a letter and a pouch of gold")
             st.insert(END,
-                      "\t\t\t  LETTER\nahhh lancelot i am the one who stole ur fortune .\nU and your arogant behaviour was making me sick it serves u right")
+                      "\t LETTER"
+                      "\nahhh lancelot i am the one who stole ur fortune ."
+                      "\nU and your arogant behaviour was making me sick it serves u right")
             c12 = Checkbutton(gg, text="look around for more clues")
             c13 = Checkbutton(gg, text="go back")
-            c12_window = f.create_window(850, 450, anchor=NW, window=c12)
-            c13_window = f.create_window(850, 500, anchor=NW, window=c13)
+            c12_window = f.create_window(
+                850, 450, anchor=NW, window=c12)
+            c13_window = f.create_window(
+                850, 500, anchor=NW, window=c13)
 
             def last():
                 c12.destroy()
                 c13.destroy()
-                c1_window = f.create_window(20, 350, anchor=NW, window=I8)
+                c1_window = f.create_window(
+                    20, 350, anchor=NW, window=I8)
                 st.insert(END,
-                          "\n hmm let me look around \n wait is that gold.... \n there is a trail of gold here!!....  ")
+                          "\n hmm let me look around "
+                          "\n wait is that gold.... "
+                          "\n there is a trail of gold here!!....  ")
                 st.insert(END,
-                          " \n FOLLOWING THE GOLD COIN TRAIL\nhmm the apparatus, its a living thing which uses pure metal as blood ./n It looks down for some reason and its following me from the start of the trail i wonder why\n well i have to find the one who took my  fortune \n   CONTINUES TO FOLLOW THE TRAIL\nyou:AHHH i found my fortune\nyou: whaat.. are you doing here emma\nEmma:hi lancelot i was the one who took wour fortune \n you: that explains why the safe was not damaged \n Emma : you were so  polite and kind when you were inventing but now you have become arrogant and rude  because of your fortune.Your not the lancelot that i knew\nyou : so we are on our ways now \nEmma: i will be waiting\nyou: hmm i offered my to people who needed it but they refused it now what will i do with this money \nThe apparatuse maintains the land there is no doubt that there is spikes every where \nmaybe i will give the gold to the appratus and save its life")
+                          " \n FOLLOWING THE GOLD COIN TRAIL"
+                          "\nhmm the apparatus, its a living thing which uses pure metal as blood."
+                          "\n It looks down for some reason and its following me from the start of the trail i wonder why"
+                          "\n well i have to find the one who took my  fortune"
+                          "\n   CONTINUES TO FOLLOW THE TRAIL"
+                          "\nyou:AHHH i found my fortune"
+                          "\nyou: whaat.. are you doing here emma"
+                          "\nEmma:hi lancelot i was the one who took wour fortune" 
+                          "\n you: that explains why the safe was not damaged"
+                          "\n Emma : you were so  polite and kind when you were inventing but now you have become arrogant and rude  because of your fortune.Your not the lancelot that i knew"
+                          "\nyou : so we are on our ways now"
+                          "\nEmma: i will be waiting"
+                          "\nyou: hmm i offered my to people who needed it but they refused it now what will i do with this money"
+                          "\nThe apparatuse maintains the land there is no doubt that there is spikes every where"
+                          "\nmaybe i will give the gold to the appratus and save its life")
 
                 def s7():
                     st.insert(END,
-                              "\n \n would u like to save the apparatus ")
+                              "\n would u like to save the apparatus ")
                     ic = Checkbutton(gg, text="y")
                     ic1 = Checkbutton(gg, text="y")
-                    ic_window = f.create_window(850, 450, window=ic, anchor=NW)
+                    ic_window = f.create_window(
+                        850, 450, window=ic, anchor=NW)
+        
                     ic1_window = f.create_window(
                         850, 500, window=ic1, anchor=NW)
+                        
+                        
 
                     def b():
-                        st.insert(END, "\nthe apparatus (-_-)->(>_<)->(*,*) ")
+                        st.insert(END, 
+                                  "\nthe apparatus (-_-)->(>_<)->(*,*) ")
                         f.create_text(
                             1000, 480, text="please give feedback of the game", fill="yellow")
                         T = Entry(gg, width=40)
                         T_window = f.create_window(
                             900, 500, window=T, anchor=NW)
+                            
                         h = Button(gg, text="enter")
                         h_window = f.create_window(
                             900, 550, anchor=NW, window=h)
-
+                            
                         def read():
                             l = []
                             with open('feedback.txt', "r")as myfile:
@@ -112,24 +152,30 @@ def start():
                         gg, text="2).look around to find more clues")
                     c10_window = f.create_window(
                         850, 450, window=c10, anchor=NW)
+                        
                     c11_window = f.create_window(
                         850, 500, window=c11, anchor=NW)
+                        
 
+                    
                     def seeCart():
                         c1_window = f.create_window(
-                            20, 350, anchor=NW, window=I5)
+                            20, 350, anchor=NW, window=I5)   
                         c10.destroy()
                         c11.destroy()
                         st.insert(END, "\n the cart is there ")
                         c14 = Checkbutton(gg, text="check inside the cart")
                         c14_window = f.create_window(
                             850, 450, window=c14, anchor=NW)
+                            
                         c15 = Checkbutton(gg, text="check outside")
                         c15_window = f.create_window(
                             850, 500, window=c15, anchor=NW)
+                            
                         c16 = Checkbutton(gg, text="go back")
                         c16_window = f.create_window(
                             850, 550, window=c16, anchor=NW)
+                            
 
                         def SeeCart2():
                             c14.destroy()
@@ -145,7 +191,9 @@ def start():
                             st.insert(
                                 END, "hmm there is a paper,lets see what is written in that ")
                             st.insert(END,
-                                      "THE APPATRAUS \nIS living thing which uses pure metal as blood.\nIt keeps the land in order,other wise the land will be filled with thorns and traps ")
+                                      "THE APPATRAUS "
+                                      "\nIS living thing which uses pure metal as blood."
+                                      "\nIt keeps the land in order,other wise the land will be filled with thorns and traps ")
                             seeCart()
 
                         def bh():
@@ -179,19 +227,28 @@ def start():
         check1()
 
     def beginning():
-        c1 = Checkbutton(gg, text=" 1)go to the post office")
-        c_window = f.create_window(850, 450, window=c1, anchor=NW)
-        c2 = Checkbutton(gg, text="2)go to the bar")
-        c_window = f.create_window(850, 500, window=c2, anchor=NW)
+        c1 = Checkbutton(
+            gg, text=" 1)go to the post office")
+        c_window = f.create_window(
+            850, 450, window=c1, anchor=NW)
+            
+        c2 = Checkbutton(
+            gg, text="2)go to the bar")
+        c_window = f.create_window(
+            850, 500, window=c2, anchor=NW)
+            
 
         def postOffice():
-            st.insert(END, "\nThere are no letters for you")
+            st.insert(END, 
+                      "\nThere are no letters for you")
             c1.destroy()
             c2.destroy()
             beginning()
 
         def bar():
-            c1_window = f.create_window(20, 350, anchor=NW, window=I3)
+            c1_window = f.create_window( 
+                20, 350, anchor=NW, window=I3)
+                
             st.insert(END, """ \n IN THE BAR  :
                                 baxter: hey mate how are you?, I heard that you were robbed .
                                 you: ahhh yea those thugs took all my fortune without
@@ -203,15 +260,21 @@ def start():
             c2.destroy()
 
             def leave():
-                st.insert(END, "\nWhat do you want to do?")
+                st.insert(END,
+                           "\nWhat do you want to do?")
                 c3 = Checkbutton(
                     gg, text="1)hang around looking for more info")
-                c_window = f.create_window(850, 450, window=c3, anchor=NW)
+                c_window = f.create_window(
+                    850, 450, window=c3, anchor=NW)
+                    
                 c4 = Checkbutton(gg, text="2)leave the bar")
-                c_window = f.create_window(850, 500, window=c4, anchor=NW)
+                c_window = f.create_window(
+                    850, 500, window=c4, anchor=NW)
+                    
 
                 def noInfo():
-                    st.insert(END, "\n no usefull information")
+                    st.insert(END, 
+                              "\n no usefull information")
                     c3.destroy()
                     c4.destroy()
                     leave()
@@ -222,13 +285,19 @@ def start():
 
                     def inner():
                         st.insert(
-                            END, " \n okay you are outside the bar.\n What do you want to do \n")
-                        c5 = Checkbutton(f, text="1)to the village headman\n")
-                        c6 = Checkbutton(f, text="2)home")
+                            END,
+                            " \n okay you are outside the bar."
+                            "\n What do you want to do \n")
+                        c5 = Checkbutton(
+                            f, text="1)to the village headman\n")
+                        c6 = Checkbutton(
+                            f, text="2)home")
                         c_window = f.create_window(
                             850, 450, window=c5, anchor=NW)
+                            
                         c_window = f.create_window(
                             850, 500, window=c6, anchor=NW)
+                            
 
                         def Headman():
                             c5.destroy()
@@ -249,8 +318,9 @@ def start():
                                         END, "\nWhat do you want to do?\n")
                                     c1_window = f.create_window(
                                         20, 350, anchor=NW, window=I4)
+                                        
                                     c7 = Checkbutton(
-                                        f, text=")check the bulding windows for damage")
+                                        f, text="1)check the bulding windows for damage")
                                     c8 = Checkbutton(
                                         f, text="2).check the safe for damages")
                                     c9 = Checkbutton(
@@ -264,7 +334,8 @@ def start():
 
                                     def homeWindow():
                                         st.insert(
-                                            END, "  \n hmm the bulding windoes are not damaged ")
+                                            END, "  
+                                            "n hmm the bulding windoes are not damaged ")
                                         c7.destroy()
                                         c8.destroy()
                                         c9.destroy()
@@ -272,7 +343,8 @@ def start():
 
                                     def safe():
                                         st.insert(END,
-                                                  "\nwait the safe is also not damaged \n hmmm now i have a feeling that someone who knows about my inventions stole my fortune")
+                                                  "\nwait the safe is also not damaged "
+                                                  "\n hmmm now i have a feeling that someone who knows about my inventions stole my fortune")
                                         c7.destroy()
                                         c8.destroy()
                                         c9.destroy()
@@ -303,7 +375,8 @@ def start():
                                                 c10.destroy()
                                                 c11.destroy()
                                                 st.insert(
-                                                    END, "\nhmm a clearing and there is a cart ")
+                                                    END, 
+                                                    "\nhmm a clearing and there is a cart ")
                                                 c1_window = f.create_window(
                                                     2000, 350, anchor=NW, window=I7)
 
@@ -311,7 +384,8 @@ def start():
                                                     c1_window = f.create_window(
                                                         20, 350, anchor=NW, window=I5)
                                                     st.insert(
-                                                        END, "\nwant to check the cart?")
+                                                        END,
+                                                         "\nwant to check the cart?")
                                                     l1 = Checkbutton(
                                                         f, text="y")
                                                     l1_window = f.create_window(
@@ -327,7 +401,8 @@ def start():
 
                                                         def paper():
                                                             st.insert(END,
-                                                                      "\nThis cart is not designed by me \n oh there is a chest and a paper here")
+                                                                      "\nThis cart is not designed by me "
+                                                                      "\n oh there is a chest and a paper here")
                                                             o1 = Checkbutton(
                                                                 f, text="try to open the chest")
                                                             o1_window = f.create_window(
@@ -341,7 +416,8 @@ def start():
                                                                 o1.destroy()
                                                                 o2.destroy()
                                                                 st.insert(END,
-                                                                          "\n PAPER \nSolve the puzzle below to open the chest")
+                                                                          "\n PAPER "
+                                                                          "\nSolve the puzzle below to open the chest")
                                                                 st.insert(
                                                                     END, "\ndo yo want to solve it?")
                                                                 o3 = Checkbutton(
@@ -391,20 +467,23 @@ def start():
                                                                                 x = random.randint(
                                                                                     1, 9)
                                                                                 if i[j] != x:
-                                                                                    i[j] = Button(p, text=i[j], width=4,
-                                                                                                  bg="orange",
-                                                                                                  fg="purple")
-                                                                                    i[j].grid(row=0 + j, column=0 + y,
-                                                                                              sticky=W,
-                                                                                              pady=2, padx=2)
+                                                                                    i[j] = Button(
+                                                                                                    p, text=i[j], width=4,
+                                                                                                    bg="orange",
+                                                                                                    fg="purple")
+                                                                                    i[j].grid(
+                                                                                                row=0 + j, column=0 + y,
+                                                                                                sticky=W,
+                                                                                                pady=2, padx=2)
                                                                                 else:
                                                                                     nice.append(
                                                                                         i[j])
                                                                                     u = Entry(
                                                                                         p, width=4)
-                                                                                    u.grid(row=0 + j, column=0 + y,
-                                                                                           sticky=W,
-                                                                                           pady=2, padx=2)
+                                                                                    u.grid(
+                                                                                            row=0 + j, column=0 + y,
+                                                                                            sticky=W,
+                                                                                            pady=2, padx=2)
                                                                                     nicex.append(
                                                                                         j)
                                                                                     nicey.append(
@@ -422,8 +501,8 @@ def start():
                                                                         def enter():
                                                                             y = random.sample(
                                                                                 nice, 4)
-                                                                            g = Label(p,
-                                                                                      text="the password is in this coordinates")
+                                                                            g = Label(
+                                                                                      p,text="the password is in this coordinates")
                                                                             g.grid(
                                                                                 row=0, column=11)
                                                                             k = 0
@@ -435,8 +514,8 @@ def start():
                                                                                 g.grid(
                                                                                     row=1 + k, column=11)
                                                                                 k += 1
-                                                                                e = Entry(p,
-                                                                                          text="enter the password here",
+                                                                                e = Entry(
+                                                                                          p,text="enter the password here",
                                                                                           width=20)
                                                                                 e.grid(
                                                                                     row=6, column=11)
@@ -456,8 +535,8 @@ def start():
                                                                                         p, text="correct!!")
                                                                                     f.grid(
                                                                                         row=6, column=31)
-                                                                                    con1 = Button(p,
-                                                                                                  text="continue the game")
+                                                                                    con1 = Button(
+                                                                                                  p,text="continue the game")
                                                                                     con1.grid(
                                                                                         row=7, column=11)
 
@@ -559,5 +638,6 @@ def start():
 
 
 d.configure(command=start)
-d_window = f.create_window(100, 0, anchor=NW, window=d)
+d_window = f.create_window(
+    100, 0, anchor=NW, window=d)
 gg.mainloop()
