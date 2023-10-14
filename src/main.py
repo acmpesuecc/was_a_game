@@ -93,9 +93,9 @@ def start():
                                 l.append(myfile.read())
                             g = T.get()
                             l.append(g)
-                            with open('feedback.txt', "w") as myfile:
-                                for i in l:
-                                   myfile.write("%s\n" % i)
+                            with open('feedback.txt', "a") as myfile:
+                                for i in l:#('%s\n'%i)
+                                   myfile.write("{}\n".format(i))
                         h.configure(command=read)
                         ic.destroy()
                         ic1.destroy()
