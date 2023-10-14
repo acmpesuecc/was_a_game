@@ -5,6 +5,7 @@ from PIL import ImageTk, Image
 import os
 # MAIN WINDOW
 gg = Tk()
+gg.attributes('-fullscreen',True)
 gg.title("Text Based Adverture game")
 f = Canvas(gg, width=1270, height=800)
 f.pack(fill="both", expand=True)
@@ -604,4 +605,5 @@ def start():
 
 d.configure(command=start)
 d_window = f.create_window(100, 0, anchor=NW, window=d)
+gg.bind("<Escape>", lambda e: gg.quit())
 gg.mainloop()
